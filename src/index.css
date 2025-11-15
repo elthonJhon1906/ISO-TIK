@@ -39,9 +39,52 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-navy: var(--navy);
+  --color-navy-hover: var(--navy-hover);
+  --color-navy-active: var(--navy-active);
+  --color-gray-light: var(--gray-light);
+  --color-gray-medium: var(--gray-medium);
+  --color-gray-dark: var(--gray-dark);
+  --color-gray-dark2: var(--gray-dark2);
+  --color-green-dark: var(--green-dark);
+  --color-green: var(--green);
+  --color-green-light: var(--green-light);
+  --color-red-dark: var(--red-dark);
+  --color-red: var(--red);
+  --color-red-light: var(--red-light);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-yellow: var(--yellow);
+  --color-yellow-light: var(--yellow-light);
+  --color-blue-dark: var(--blue-dark);
+  --color-blue: var(--blue);
+  --color-blue-light: var(--blue-light);
+  --color-state: var(--state);
 }
 
 :root {
+  /* Colors Customize */
+  --navy: #0f172b;
+  --navy-hover: #314158;
+  --navy-active: #020618;
+  --gray-light: #f9fafb;
+  --gray-medium: #e2e8f0;
+  --gray-dark: #90a1b9;
+  --gray-dark2: #f1f5f9;
+  --green-dark: #016630;
+  --green: #00c950;
+  --green-light: #f0fdf4;
+  --red-dark: #9f0712;
+  --red: #fb2c36;
+  --red-light: #fef2f2;
+  --yellow-dark: #894b00;
+  --yellow: #f0b100;
+  --yellow-light: #fefce8;
+  --blue-dark: #193cb8;
+  --blue: #2b7fff;
+  --blue-light: #eff6ff;
+  --state: #f1f5f9;
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -100,7 +143,6 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -108,6 +150,50 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer utilities {
+  .heading-1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .heading-2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+  }
+  .heading-3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .heading-4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .heading-4-bold {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .body-medium {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  .body-bold {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .small {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  .small-medium {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
 }
 
 @layer base {
