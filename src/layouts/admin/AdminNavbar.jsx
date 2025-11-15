@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function getInitials(name = "") {
   const [first = "", second = ""] = name.trim().split(" ");
   if (!first && !second) return "";
@@ -13,6 +13,7 @@ export function AdminNavbar({
   user = {
     name: "Admin User",
     role: "Administrator",
+    urlDetail: '/userDetail'
   },
 }) {
   const initials = user.initials ?? getInitials(user.name);
@@ -28,14 +29,14 @@ export function AdminNavbar({
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex size-11 items-center justify-center rounded-full bg-navy text-sm font-semibold text-white">
+          <div className="flex size-11 items-center justify-center rounded-full text-sm font-semibold text-[#1B2A49]">
             {initials}
           </div>
           <div className="flex flex-col text-right">
-            <span className="text-navy text-sm font-medium">
+            <Link className="text-[#1B2A49] body-medium" to={user.urlDetail}>
               {user.name}
-            </span>
-            <span className="text-gray-dark text-xs">
+            </Link>
+            <span className="text-gray-dark small">
               {user.role}
             </span>
           </div>

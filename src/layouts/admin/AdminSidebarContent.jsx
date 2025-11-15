@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   SidebarGroup,
   SidebarMenu,
@@ -54,10 +55,10 @@ function SidebarNavItem({
         onMouseLeave={onMouseLeave}
         className={`${buttonClasses} ${isActive ? activeClasses : inactiveClasses}`}
       >
-        <a href={item.url} className="flex items-center gap-3 p-6">
+        <NavLink to={item.url} className="flex items-center gap-3 p-6">
           <IconComponent className={iconClasses} />
           <span className={textClasses}>{item.title}</span>
-        </a>
+        </NavLink>
       </SidebarMenuButton>
     </SidebarMenuItem>
   );
@@ -123,16 +124,16 @@ export function AdminSidebarContent() {
               onMouseLeave={() => setHoveredItem(null)}
               className="group transition-all duration-200 hover:bg-red-50 hover:text-red-700"
             >
-              <a href="/logout" className="flex items-center gap-3 p-6">
+              <NavLink to="/logout" className="flex items-center gap-3 p-6 mb-8">
                 {hoveredItem === "logout" ? (
-                  <LogOutIcon className="h-4 w-4 text-red-700 scale-110 transition-all duration-200" />
+                  <LogOutIcon className="h-4 w-4 text-red-700 transition-all duration-200" />
                 ) : (
                   <LogOut className="h-4 w-4 text-red-600 transition-all duration-200" />
                 )}
-                <span className="text-body-medium transition-all duration-200 group-hover:font-medium">
-                  Keluar
+                <span className="transition-all text-red duration-200 body-medium">
+                  Logout
                 </span>
-              </a>
+              </NavLink>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
