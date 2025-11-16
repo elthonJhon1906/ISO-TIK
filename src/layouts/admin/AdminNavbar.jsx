@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAdminLayout } from "./AdminLayoutContext";
 function getInitials(name = "") {
   const [first = "", second = ""] = name.trim().split(" ");
   if (!first && !second) return "";
@@ -7,15 +8,9 @@ function getInitials(name = "") {
   return `${first[0]}${second[0]}`.toUpperCase();
 }
 
-export function AdminNavbar({
-  title = "Dashboard",
-  subtitle = "Selamat datang di sistem audit management",
-  user = {
-    name: "Admin User",
-    role: "Administrator",
-    urlDetail: '/admin/profile'
-  },
-}) {
+export function AdminNavbar() {
+  const { header } = useAdminLayout();
+  const { title, subtitle, user } = header;
   const initials = user.initials ?? getInitials(user.name);
 
   return (
